@@ -55,5 +55,5 @@
 - Support of Compare at price
 
 🌟 Feel free to Star and PR.
-[sanjar.dev](sanjar.dev "sanjar.dev")
+[https://sanjar.dev](sanjar.dev "sanjar.dev")
 
