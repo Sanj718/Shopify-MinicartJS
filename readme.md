@@ -55,5 +55,9 @@
 - Support of Compare at price
 
 🌟 Feel free to Star and PR.
+<<<<<<< HEAD
 [https://sanjar.dev](sanjar.dev "sanjar.dev")
+=======
+[sanjar.dev](https://sanjar.dev)
+>>>>>>> bab821b464accd7a28b7d02df6f6efa86798247b
 
