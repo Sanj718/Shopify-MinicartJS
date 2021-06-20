@@ -1,37 +1,59 @@
-## Welcome to GitHub Pages
+# Shopify MiniCart JS
 
-You can use the [editor on GitHub](https://github.com/Sanj718/Shopify-MinicartJS/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+![](https://raw.githubusercontent.com/Sanj718/Shopify-MinicartJS/main/logo.svg)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Features 🚀
+- Slide-out min-cart
+- Total quantity indicator
+- Easy deployment & customizable
+- Custom cart endpoint support
+- Global usage through `window.mini_cart`
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Integration ⚙️
+1. Copy files to corresponding directories into your theme
+2. Modify `theme.liquid` file (follow the sample in layouts folder)
 
-```markdown
-Syntax highlighted code block
+## Usage ✅
 
-# Header 1
-## Header 2
-### Header 3
+1. Add `data-minicart-open` data attribute to trigger open mini cart.
+2. Add `data-minicart-totalCount` to show cart total items quantity.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+*Sample:*
+```html
+<button data-minicart-open type="button">MINICART - <span data-minicart-totalCount>{{ cart.item_count }}</span></button>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+**Add `window.mini_cart.updateCart()` after add to cart script.**
 
-### Jekyll Themes
+*Sample:*
+```javascript
+ _addItemToCart: function(data) {
+      var params = {
+        url: '/cart/add.js',
+        data: $(data).serialize(),
+        dataType: 'json'
+      };
+      $.post(params)
+        .done(
+          function(item) {
+            window.mini_cart.updateCart()
+          }.bind(this)
+        )
+        .fail(
+          function(response) {
+            console.error(response)
+          }.bind(this)
+        );
+    }
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Sanj718/Shopify-MinicartJS/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+------------
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+##### TODO ⏳
+- Support of Compare at price
+
+🌟 Feel free to Star and PR.
+[sanjar.dev](sanjar.dev "sanjar.dev")
+
