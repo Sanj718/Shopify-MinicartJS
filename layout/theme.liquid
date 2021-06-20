@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
 
   <!-- Minicart Basic CSS -->
-  {{ 'minicart.min.css' | asset_url | stylesheet_tag }}
+  {{ 'minicart.css' | asset_url | stylesheet_tag }}
 
   {{ content_for_header }}
 </head>
@@ -28,6 +28,6 @@
   </div>
 
   <!-- Minicart JS -->
-  {{ 'minicart.min.js' | asset_url | script_tag }}
+  {{ 'minicart.js' | asset_url | script_tag }}
 </body>
 </html>
