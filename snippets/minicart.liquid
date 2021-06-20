@@ -1,0 +1,44 @@
+<div class="minicart-wrapper {% if cart.item_count == 0 %}empty{% endif %}" data-minicart>
+    <div class="overlay" data-minicart-close></div>
+    <div
+        aria-modal="true"
+        class="minicart"
+        data-minicart
+        role="dialog">
+        <div class="minicart__header">
+            <h3 class="title">My Bag</h3>
+            <p class="cart-info">Free shipping on all domestic orders over $150</p>
+            <button class="close-button" data-minicart-close type="button"></button>
+        </div>
+        <form action="/cart" method="post">
+            <div class="minicart__body">
+                <div class="cart-items" data-minicart-items></div>
+            </div>
+
+            <div class="minicart__footer">
+                <div class="minicart__footer-titleSection">
+                    <h5 class="title">Subtotal</h5>
+                    <span class="subtotal" data-minicart-subtotal>
+                        {{ cart.total_price | money }}
+                    </span>
+                </div>
+                <div class="mini-cart__footer-buttonsSection">
+                    <a class="cart-button" href="{{ routes.cart_url }}">
+                        Go to cart
+                    </a>
+                    <button class="cart-button" name="checkout" type="submit">
+                        Checkout
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div class="empty-cartnote">
+            <div>
+                <h4>Oops, There’s nothing in your cart</h4>
+                <a class="cart-button" href=" {{ routes.all_products_collection_url }}">Shop now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% render 'minicart-item' %}

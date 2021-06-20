@@ -1,0 +1,36 @@
+{%- capture mini_cart_item_layout -%}
+<div class="cart-items__item" data-minicart-item="[[itemVariantId]]">
+    <div class="cart-items__image">
+        [[itemImage]]
+    </div>
+    <div class="cart-items__details">
+        <h6 class="title">
+            <a href="[[itemUrl]]">[[itemTitle]]</a>
+        </h6>
+        <div class="price">
+            <div class="price__wrapper">
+                <span class="price__original">[[itemComparePrice]]</span>
+                <span class="price__current">[[itemPrice]]</span>
+            </div>
+        </div>
+        <div class="details">
+            <ul class="details__options">
+                [[itemOptions]]
+            </ul>
+            <ul class="details__properties">
+                [[itemProps]]
+            </ul>
+        </div>
+        <div class="quantity-picker">
+            <button class="quantity-picker__btn quantity-picker__btn--decrease" data-minicart-minus type="button">&#8212;</button>
+            <input class="count" data-minicart-count value="[[itemQuantity]]" type="number"/>
+            <button class="quantity-picker__btn quantity-picker__btn--increase" data-minicart-plus type="button">&#43;</button>
+        </div>
+        <button class="remove-btn" type="button" data-minicart-remove>Remove</button>
+    </div>
+</div>
+{%- endcapture -%}
+{%- assign str = '}}' -%}
+<script>
+    var miniCartItem = {{- mini_cart_item_layout | json | replace: '[[', '{{' | replace: ']]', str -}}
+</script>
