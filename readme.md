@@ -3,18 +3,18 @@
 ![](https://raw.githubusercontent.com/Sanj718/Shopify-MinicartJS/main/logo.svg)
 
 
-## Features :tw-1f3b0:
+## Features 🚀
 - Slide-out min-cart
 - Total quantity indicator
 - Easy deployment & customizable
 - Custom cart endpoint support
 - Global usage through `window.mini_cart`
 
-## Integration :tw-1f680:
+## Integration ⚙️
 1. Copy files to corresponding directories into your theme
 2. Modify `theme.liquid` file (follow the sample in layouts folder)
 
-## Usage :tw-2705:
+## Usage ✅
 
 1. Add `data-minicart-open` data attribute to trigger open mini cart.
 2. Add `data-minicart-totalCount` to show cart total items quantity.
@@ -51,9 +51,9 @@
 ------------
 
 
-##### TODO :tw-231b:
+##### TODO ⏳
 - Support of Compare at price
 
-:tw-1f64c: Feel free to Star and PR.
+🌟 Feel free to Star and PR.
 [sanjar.dev](sanjar.dev "sanjar.dev")
 
